@@ -1,0 +1,32 @@
+{
+  "entities": {
+    "BorangPenerimaan": {
+      "title": "Borang Penerimaan Buku Teks",
+      "description": "Rekod akuan penerimaan buku teks oleh ibu bapa/penjaga",
+      "type": "object",
+      "properties": {
+        "namaMurid": { "type": "string", "maxLength": 150 },
+        "tahun": { "type": "string", "maxLength": 50 },
+        "kelas": { "type": "string", "maxLength": 50 },
+        "namaPenjaga": { "type": "string", "maxLength": 150 },
+        "hubungan": { "type": "string", "enum": ["Ibu", "Bapa", "Penjaga"] },
+        "tarikhPenerimaan": { "type": "string", "maxLength": 100 },
+        "bukuDiterima": {
+          "type": "string",
+          "description": "JSON string senarai buku diterima",
+          "maxLength": 5000
+        },
+        "jumlahBukuDiterima": { "type": "number" },
+        "statusLengkap": { "type": "boolean" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["namaMurid", "tahun", "kelas", "namaPenjaga", "hubungan", "tarikhPenerimaan", "jumlahBukuDiterima", "bukuDiterima", "createdAt"]
+    }
+  },
+  "firestore": {
+    "borang_penerimaan/{borangId}": {
+      "schema": "#/entities/BorangPenerimaan",
+      "description": "Menyimpan semua borang penerimaan buku teks yang dihantar oleh ibu bapa"
+    }
+  }
+}

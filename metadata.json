@@ -1,0 +1,8 @@
+{
+  "name": "Sistem Perekodan Buku Teks SPBT SK Tudan",
+  "description": "Sistem untuk ibu bapa mengisi Borang Akuan Penerimaan Buku Teks Tahun 3 2026 dan ruangan guru untuk menyemak rekod.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
